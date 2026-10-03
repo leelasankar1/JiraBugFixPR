@@ -1,0 +1,11 @@
+{
+  "key": "PROJ-102",
+  "fields": {
+    "summary": "Discounts increased the price instead of reducing",
+    "description": "The discount calculator applied the percentage as a price increase. Update the calculation so a discount reduces the original price by the requested percentage.",
+    "issuetype": { "name": "Bug" },
+    "status": { "name": "Open" },
+    "priority": { "name": "High" },
+    "labels": ["discount", "pricing", "bug"]
+  }
+}

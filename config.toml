@@ -1,0 +1,28 @@
+# Codex MCP server configuration.
+# Set credentials in the environment before launching Codex; do not put secrets here.
+# Required by mcp-atlassian (Atlassian Cloud):
+#   JIRA_URL, JIRA_USERNAME, JIRA_API_TOKEN
+# Optional Confluence variables:
+#   CONFLUENCE_URL, CONFLUENCE_USERNAME, CONFLUENCE_API_TOKEN
+# Required by GitHub MCP (PAT auth):
+#   GITHUB_PERSONAL_ACCESS_TOKEN
+
+[mcp_servers.mock-jira]
+command = "D:/JiraBugFixPR/.venv/Scripts/python.exe"
+args = ["D:/JiraBugFixPR/mock_jira.py"]
+env_vars = ["JIRA_BASE_URL", "JIRA_TOKEN"]
+
+[mcp_servers.mcp-atlassian]
+command = "uvx"
+args = ["mcp-atlassian"]
+
+[mcp_servers.github]
+command = "docker"
+args = [
+  "run",
+  "-i",
+  "--rm",
+  "-e",
+  "GITHUB_PERSONAL_ACCESS_TOKEN",
+  "ghcr.io/github/github-mcp-server"
+]
