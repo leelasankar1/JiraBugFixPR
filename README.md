@@ -23,3 +23,4 @@ python mock_jira_mcp.py
 `apply_discount("10.00", 50)` returns `"5.00"`. Discounts reduce the price by
 multiplying by `1 - percent / 100`; a 0% discount leaves the price unchanged,
 and a 100% discount returns `"0.00"`.
+"# JiraBugFixPR" 
