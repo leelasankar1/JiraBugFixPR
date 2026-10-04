@@ -7,12 +7,12 @@ _CENT = Decimal("0.01")
 
 def _as_decimal(value, name):
     try:
-        result = Decimal(str(value))
+        parsed = Decimal(str(value))
     except (InvalidOperation, ValueError, TypeError) as exc:
         raise ValueError(f"invalid {name}: {value!r}") from exc
-    if not result.is_finite():
+    if not parsed.is_finite():
         raise ValueError(f"{name} must be finite")
-    return result
+    return parsed
 
 
 def apply_discount(price, percent):
